@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "profile": "configuration",
+  "commands": {
+    "install": [
+      "make",
+      "install"
+    ],
+    "check": [
+      "make",
+      "check"
+    ],
+    "clean": [
+      "make",
+      "clean"
+    ],
+    "lint": {
+      "unsupported": "Minimal source fixture has no standalone runtime, source linter, package build or development service; its consuming integration suite owns engine behavior."
+    },
+    "test": {
+      "unsupported": "Minimal source fixture has no standalone runtime, source linter, package build or development service; its consuming integration suite owns engine behavior."
+    },
+    "build": {
+      "unsupported": "Minimal source fixture has no standalone runtime, source linter, package build or development service; its consuming integration suite owns engine behavior."
+    },
+    "dev": {
+      "unsupported": "Minimal source fixture has no standalone runtime, source linter, package build or development service; its consuming integration suite owns engine behavior."
+    },
+    "stop": {
+      "unsupported": "Minimal source fixture has no standalone runtime, source linter, package build or development service; its consuming integration suite owns engine behavior."
+    }
+  }
+}
