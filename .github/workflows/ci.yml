@@ -35,10 +35,13 @@ jobs:
       if: github.event_name == 'pull_request'
       env:
         EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
-      run: |
-        komizo exec --tools python -- bash -euo pipefail <<'KOMIZO_COMMAND'
+      run: 'komizo exec --tools python -- bash -euo pipefail <<''KOMIZO_COMMAND''
+
         python3 "$CICD_ENGINEERING/helpers/integration-identity.py"
+
         KOMIZO_COMMAND
+
+        '
     - name: Upload artifacts
       if: github.event_name == 'pull_request'
       uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
@@ -52,13 +55,5 @@ jobs:
       uses: nicodes/komizo/run@c5f5ce398dcae5c7b3f8157e8331e7fcdf0c9e03
       with:
         target: check
-    - name: Upload artifacts
-      uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
-      with:
-        name: tested-package-${{ github.event.pull_request.head.sha || github.sha }}
-        path: |
-          dist/@aviorstudio_gd-env.zip
-          dist/@aviorstudio_gd-env.zip.sha256
-        if-no-files-found: error
     env:
       MISE_GITHUB_TOKEN: ${{ github.token }}
