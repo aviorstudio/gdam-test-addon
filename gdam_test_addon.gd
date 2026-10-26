@@ -2,7 +2,7 @@
 extends EditorPlugin
 
 func _enter_tree() -> void:
-	print("GDAM Test Addon enabled")
+	print("gdam Test Addon enabled")
 
 func _exit_tree() -> void:
-	print("GDAM Test Addon disabled")
+	print("gdam Test Addon disabled")
