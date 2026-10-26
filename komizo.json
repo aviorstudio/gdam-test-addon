@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "recipe": "configuration",
+  "repository": "aviorstudio/gdam-test-addon",
+  "stages": {
+    "lint": {
+      "inapplicable": "The fixture invariants are checked by the unit gate"
+    },
+    "unit": [
+      [
+        "python3",
+        "scripts/check_fixture.py"
+      ]
+    ]
+  },
+  "validation": {
+    "workflow": {
+      "required": [
+        "ci.yml",
+        "dependency-policy.yml"
+      ],
+      "ci_gates": [
+        "Test"
+      ]
+    }
+  }
+}
