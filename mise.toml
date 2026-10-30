@@ -1,0 +1,16 @@
+[tools]
+"python" = "3.13.11"
+
+[env]
+TOOLS_ROOT = "{{ get_env(name='TOOLS_ROOT', default=config_root ~ '/.ci-tools') }}"
+GOTOOLCHAIN = "local"
+PYTHONDONTWRITEBYTECODE = "1"
+
+[tasks."unit"]
+run = ["python3 scripts/check_fixture.py"]
+
+[tasks."test"]
+run = [{"task" = "unit"}]
+
+[tasks."check"]
+run = [{"task" = "unit"}]
