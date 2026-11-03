@@ -1,4 +1,4 @@
-<!-- Generated from private documentation source. Do not edit directly. Source SHA256: 11127f17367c1758bc6ab7cd6ce305353bd8552f255f284837f8e79a049139c5 -->
+<!-- Generated from private documentation source. Do not edit directly. Source SHA256: a923618f706165103cf22adec4ca382b7bff52b338c8d6df9c963b93d3e4402c -->
 
 # gdam-test-addon
 
@@ -16,3 +16,7 @@ mise run check
 ```
 
 Declared tests produce source evidence from the current verification session in `.artifacts/verification`.
+
+## Contributor task interface
+
+Contributor tool versions and task entry points live in the native Mise configuration. Use `mise run lint` for source checks, `mise run test` for the applicable behavioral tests, and `mise run check` for the complete supported gate. `mise run clean` removes declared generated outputs while preserving source, credentials and retained data. This package has no application development service.

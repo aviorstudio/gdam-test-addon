@@ -24,5 +24,11 @@ run = [{"task" = "unit"}]
 hide = true
 
 [tasks."_check-stages"]
-run = [{"task" = "unit"}]
+run = [{task = "lint"}, {task = "unit"}]
 hide = true
+
+[tasks."clean"]
+run = "python3 \"$TOOLS_ROOT/helpers/clean.py\" --path .artifacts/build --path .artifacts/venv --path target"
+
+[tasks."lint"]
+run = ["python3 -c 'import ast;from pathlib import Path;[ast.parse(p.read_text(),filename=str(p)) for p in Path(\"scripts\").rglob(\"*.py\")]'"]
